@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            background-color: rgba(255,221,218,0.82);
+        }
+        .contain{
+            width: 300px;
+            height: 150px;
+            scroll-snap-type: x mandatory;
+            white-space: nowrap;
+            overflow: auto;
+        }
+        .contain div{
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            scroll-snap-align: center;
+            background-color: rgba(167,237,10,0.82);
+            margin: 10px;
+        }
+    /*    TODO 提醒我等一下再写  */
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+<script>
+    console.log()
+</script>
+</html>

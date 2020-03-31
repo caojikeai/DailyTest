@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/svg.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--    <svg height="500" width="1500" style="background-color: rgba(255,221,218,0.82)">-->
+<!--        <path fill="#1EB287">-->
+<!--            <animate-->
+<!--                    attributeName="d"-->
+<!--                    dur="1440ms"-->
+<!--                    repeatCount="indefinite"-->
+<!--                    keyTimes="0;-->
+<!--                       .0625;-->
+<!--                       .208333333;-->
+<!--                       .3125;-->
+<!--                       .395833333;-->
+<!--                       .645833333;-->
+<!--                       .833333333;-->
+<!--                       1"-->
+<!--                    calcMode="spline"-->
+<!--                    keySplines="0,0,1,1;-->
+<!--                         .42,0,.58,1;-->
+<!--                         .42,0,1,1;-->
+<!--                         0,0,.58,1;-->
+<!--                         .42,0,.58,1;-->
+<!--                         .42,0,.58,1;-->
+<!--                         .42,0,.58,1"-->
+<!--                    values="M 0,0-->
+<!--                     C 50,0 50,0 100,0-->
+<!--                     100,50 100,50 100,100-->
+<!--                     50,100 50,100 0,100-->
+<!--                     0,50 0,50 0,0-->
+<!--                     Z;-->
+
+<!--                     M 0,0-->
+<!--                     C 50,0 50,0 100,0-->
+<!--                     100,50 100,50 100,100-->
+<!--                     50,100 50,100 0,100-->
+<!--                     0,50 0,50 0,0-->
+<!--                     Z;-->
+
+<!--                     M 50,0-->
+<!--                     C 75,25 75,25 100,50-->
+<!--                     75,75 75,75 50,100-->
+<!--                     25,75 25,75 0,50-->
+<!--                     25,25 25,25 50,0-->
+<!--                     Z;-->
+
+<!--                     M 25,50-->
+<!--                     C 37.5,25 37.5,25 50,0-->
+<!--                     75,50 75,50 100,100-->
+<!--                     50,100 50,100 0,100-->
+<!--                     12.5,75 12.5,75 25,50-->
+<!--                     Z;-->
+
+<!--                     M 25,50-->
+<!--                     C 37.5,25 37.5,25 50,0-->
+<!--                     75,50 75,50 100,100-->
+<!--                     50,100 50,100 0,100-->
+<!--                     12.5,75 12.5,75 25,50-->
+<!--                     Z;-->
+
+<!--                     M 50,0-->
+<!--                     C 77.6,0 100,22.4 100,50-->
+<!--                     100,77.6 77.6,100 50,100-->
+<!--                     22.4,100, 0,77.6, 0,50-->
+<!--                     0,22.4, 22.4,0, 50,0-->
+<!--                     Z;-->
+
+<!--                     M 50,0-->
+<!--                     C 77.6,0 100,22.4 100,50-->
+<!--                     100,77.6 77.6,100 50,100-->
+<!--                     22.4,100, 0,77.6, 0,50-->
+<!--                     0,22.4, 22.4,0, 50,0-->
+<!--                     Z;-->
+
+<!--                     M 100,0-->
+<!--                     C 100,50 100,50 100,100-->
+<!--                     50,100 50,100 0,100-->
+<!--                     0,50 0,50 0,0-->
+<!--                     50,0 50,0 100,0-->
+<!--                     Z;"/>-->
+<!--        </path>-->
+<!--    </svg>-->
+<!--        <svg height="500" width="1500" style="background-color: rgba(255,221,218,0.82)">-->
+<!--&lt;!&ndash;            <rect x="0" y="0" width="30" height="30" style="fill: #ccc;">&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash;     path指明运动路径      &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                <animateMotion&ndash;&gt;-->
+<!--&lt;!&ndash;                        path="M50,125 C 100,25 150,225, 200, 125"&ndash;&gt;-->
+<!--&lt;!&ndash;                        dur="6s" fill="freeze"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </rect>&ndash;&gt;-->
+<!--            <path d="M10,110 A120,120 -45 0,1 110 10 A120,120 -45 0,1 10,110"-->
+<!--                  stroke="lightgrey" stroke-width="2"-->
+<!--                  fill="none" id="theMotionPath"/>-->
+<!--            <circle cx="10" cy="110" r="3" fill="lightgrey"  />-->
+<!--            <circle cx="110" cy="10" r="3" fill="lightgrey"  />-->
+
+<!--            &lt;!&ndash; Red circle which will be moved along the motion path. &ndash;&gt;-->
+<!--            <circle cx="" cy="" r="5" fill="red">-->
+
+<!--                &lt;!&ndash; Define the motion path animation &ndash;&gt;-->
+<!--                <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">-->
+<!--                    <mpath xlink:href="#theMotionPath"/>-->
+<!--                </animateMotion>-->
+<!--            </circle>-->
+<!--    </svg>-->
+    <svg viewBox="0 0 1320 300">
+
+        <!-- Symbol -->
+        <symbol id="s-text">
+            <text text-anchor="middle"
+                  x="50%" y="50%" dy=".35em">
+                Beacuse
+            </text>
+        </symbol>
+
+        <!-- Duplicate symbols -->
+        <use xlink:href="#s-text" class="text"
+        ></use>
+        <use xlink:href="#s-text" class="text"
+        ></use>
+        <use xlink:href="#s-text" class="text"
+        ></use>
+
+    </svg>
+</body>
+</html>
