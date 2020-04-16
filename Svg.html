@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="css/svg.css" rel="stylesheet" type="text/css">
+    <style>
+        input[type='checkbox']:checked + svg .circle{
+            animation: circle .8s ease-in-out;
+            /* 结束保持最后一帧 */
+            animation-fill-mode: forwards;
+        }
+        input[type='checkbox']:checked + svg .tick{
+            animation: tick 1s ease-out;
+            animation-fill-mode: forwards;
+            /* 动画延时 */
+            animation-delay: .4s;
+        }
+        .circle{
+            /* 虚线 */
+            stroke-dasharray: 1194;
+            stroke-dashoffset: 1194;
+
+        }
+        .tick{
+            stroke-dasharray: 350;
+            stroke-dashoffset: 350;
+        }
+        @keyframes circle {
+            from {
+                stroke-dashoffset: 1194;
+            }
+            to {
+                stroke-dashoffset: 2388;
+            }
+        }
+        @keyframes tick {
+            from {
+                stroke-dashoffset: 350;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+<input type="checkbox">
 <!--    <svg height="500" width="1500" style="background-color: rgba(255,221,218,0.82)">-->
 <!--        <path fill="#1EB287">-->
 <!--            <animate-->
@@ -107,7 +147,8 @@
 <!--                </animateMotion>-->
 <!--            </circle>-->
 <!--    </svg>-->
-    <svg viewBox="0 0 1320 300">
+
+    <svg viewBox="0 0 1320 300" version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
         <!-- Symbol -->
         <symbol id="s-text">
@@ -126,5 +167,30 @@
         ></use>
 
     </svg>
+
+
+    <!-- svg 单项控制动画   -->
+<!--    <svg width="400" height="400">-->
+<!--        <circle-->
+<!--                fill="none"-->
+<!--                stroke="#68E534"-->
+<!--                stroke-width="20"-->
+<!--                cx="200"-->
+<!--                transform="translate(174 200) rotate(-90 115 91)"-->
+<!--                r="180"-->
+<!--                stroke-linecap="round"-->
+<!--                class="circle"    />-->
+<!--        &lt;!&ndash;    参数:-->
+<!--                points 节点-->
+<!--                fill 填充-->
+<!--                stroke-linecap 边缘圆角-->
+<!--            &ndash;&gt;-->
+<!--        <polyline points="88,214 173,284 304,138"-->
+<!--                  fill="none"-->
+<!--                  stroke="#68E534"-->
+<!--                  stroke-width="24"-->
+<!--                  stroke-linecap="round"-->
+<!--                  class="tick"  />-->
+<!--    </svg>-->
 </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Svg2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            max-height: 100vh;
+            background-color: rgba(32,32,32,0.82);
+        }
+        div{
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text{
+            /* 填充颜色 */
+            fill: none;
+            /* 边缘线宽度 */
+            stroke-width: 6;
+            /*  storke-dasharray 虚线化 */
+            /* 双参数
+             实线长度
+             虚线长度
+             */
+            stroke-dasharray: 0,300;
+            /*
+                dashoffset与dasharray的关系
+                当dashoffset = dasharray时线条为空白
+                dashoffset不会大于dasharray
+            */
+            stroke-dashoffset: 0;
+            font-size: 20.5rem;
+            font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+        }
+        .animals{}
+        /* 第一个选择器 */
+        .animals:nth-child(3n+1) {
+            /* 边缘线颜色 */
+            stroke: #b21f66;
+            /* forwarids结束时保持最后一帧 */
+            animation: stroke1 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* 第二个选择器 */
+        .animals:nth-child(3n+2){
+            stroke: #fe346e;
+            animation: stroke2 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .animals:nth-child(3n+3){
+            stroke: #ffbd69;
+            animation: stroke3 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        /* 白色 */
+        @keyframes stroke1 {
+            100%{
+                stroke-dasharray: 40,80;
+                stroke-dashoffset: 220;
+            }
+        }
+
+        @keyframes stroke2 {
+            100%{
+                stroke-dasharray: 40,80;
+                stroke-dashoffset: 140;
+            }
+        }
+
+        @keyframes stroke3 {
+            100%{
+                stroke-dasharray: 40,80;
+                stroke-dashoffset: 60;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <svg viewBox="0 0 1700 1200"
+
+             height="750px"
+             version="1.2"
+             xmlns="http://www.w3.org/2000/svg"
+
+        >
+            <symbol id="text">
+                <!--                <rect x="10" y="5" width="200" height="150" fill="#cd0000"/>-->
+                <text text-anchor="middle"
+                      x="50%"
+                      y="50%"
+                      stroke-linecap="round"
+                      dy=".35em">
+                   Cool
+                </text>
+            </symbol>
+            <!--     use调用一次元件使用一次！！！！！       -->
+            <use xlink:href="#text" class="text animals"></use>
+            <use xlink:href="#text" class="text animals"></use>
+            <use xlink:href="#text" class="text animals"></use>
+<!--            <use xlink:href="#text" class="text animals"></use>-->
+        </svg>
+    </div>
+</body>
+</html>

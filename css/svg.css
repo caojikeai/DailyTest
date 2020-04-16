@@ -1,7 +1,7 @@
 .text {
     fill: none;
     stroke-width: 5;
-    stroke-dasharray: 0 300;
+    stroke-dasharray: 0,300;
     stroke-dashoffset: 0;
 }
 
@@ -26,14 +26,14 @@
 @keyframes stroke {
     100% {
         stroke-dashoffset: 1000;
-        stroke-dasharray: 80 160;
+        stroke-dasharray: 80,160;
     }
 }
 
 @keyframes stroke1 {
     100% {
         stroke-dashoffset: 1080;
-        stroke-dasharray: 80 160;
+        stroke-dasharray: 80,160;
     }
 }
 
@@ -41,9 +41,10 @@
 @keyframes stroke2 {
     100% {
         stroke-dashoffset: 1160;
-        stroke-dasharray: 80 160;
+        stroke-dasharray: 80,160;
     }
 }
+
 /*!* Other styles *!*/
 html, body {
     height: 100%;
