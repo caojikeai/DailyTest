@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mix</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hero{
+            position: relative;
+            min-height: 100vh;
+            min-width: 100vw;
+            overflow: hidden;
+        }
+        .hero p{
+            display: block;
+            position: absolute;
+            font-size: 15rem;
+            text-align: center;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            line-height: 600px;
+            background-color: #ffffff;
+            z-index: 1;
+            mix-blend-mode: lighten;
+            font-weight: 800;
+            font-family: Georgia, serif;
+            animation: opa 4s ease forwards,opa2 3s ease 8s forwards,opa3 5s ease 15s forwards;
+            opacity: 0;
+
+        }
+        .hero video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 0;
+            animation: opa 4s ease .8s forwards;
+            opacity: 0;
+        }
+        @keyframes opa {
+            from {
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        @keyframes opa2 {
+            to{
+                background-color: transparent;
+                color: rgba(255,255,255,.9);
+            }
+        }
+        @keyframes opa3 {
+            from{
+                background-color: transparent;
+                color: rgba(255,255,255,.9)
+            }
+            to{
+                background-color: #fff0f0;
+                color:rgba(32,32,32,0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <p>Freedom</p>
+        <video autoplay muted loop src="public/video/bgv_x264.mp4"></video>
+    </div>
+</body>
+</html>
