@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lottle</title>
+    <script src="scripts/lottie.min.js"></script>
+</head>
+<body>
+    <button onclick="start()">开始</button>
+    <button onclick="stop()">暂停</button>
+    <div id="animation"></div>
+</body>
+
+<script>
+        lo = lottie.loadAnimation({
+            path:'./AeAnimalsJson/tranform.json',   //json文件路径
+            loop:true,
+            autoplay:true,
+            renderer:'canvas',  //渲染方式，有"html"、"canvas"和"svg"三种
+            container:document.getElementById('animation')
+        });
+
+    let start = function () {
+        lo.play();
+    };
+    let stop = function () {
+        lo.pause();
+    };
+</script>
+</html>
