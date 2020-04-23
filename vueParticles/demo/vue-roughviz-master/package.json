@@ -1,0 +1,74 @@
+{
+  "name": "vue-roughviz",
+  "version": "0.1.2",
+  "description": "Vue Wrapper for roughViz.js",
+  "license": "MIT",
+  "author": "John Long <johnyscrazy@gmail.com>",
+  "keywords": [
+    "vue",
+    "roughviz",
+    "rough.js",
+    "d3.js"
+  ],
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-roughviz ./src/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "lodash": "^4.17.15",
+    "rough-viz": "^1.0.5",
+    "serialize-javascript": "^2.1.2",
+    "vue": "^2.6.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jolo-dev/vue-roughviz"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "main": "./dist/vue-roughviz.common.js",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "prettier": "^1.18.2",
+    "tailwindcss": "^1.1.4",
+    "vue-cli-plugin-tailwind": "^1.1.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/recommended",
+      "@vue/prettier"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
