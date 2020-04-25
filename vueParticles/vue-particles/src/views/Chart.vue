@@ -18,11 +18,9 @@
 </template>
 
 <script>
-    import  RoughDonut  from "vue-roughviz";
     export default {
         name: "Chart",
         component() {
-            RoughDonut
         }
     }
 </script>

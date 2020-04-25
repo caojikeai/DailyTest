@@ -13,10 +13,14 @@
 
 <script>
         lo = lottie.loadAnimation({
-            path:'./AeAnimalsJson/tranform.json',   //json文件路径
+
+            path:'./AeAnimalsJson/dataDna.json',   //json文件路径
+            // 循环
             loop:true,
+            // 自动播放
             autoplay:true,
             renderer:'canvas',  //渲染方式，有"html"、"canvas"和"svg"三种
+            // DOM
             container:document.getElementById('animation')
         });
 

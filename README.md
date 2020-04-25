@@ -8,3 +8,5 @@
 > 文件MixAnimals
 # Ae导入H5动画
 > 文件AeAnimal
+# Vue粒子特效(Vue3.0)
+> 文件vueParticles
