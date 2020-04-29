@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: #ff9290;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000000;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!--    <div id="box" class="box"></div>-->
+    <canvas id="can"></canvas>
+</body>
+<script>
+    // function animationWidth() {
+    //     var div = document.getElementById('box');
+    //     div.style.width = parseInt(div.clientWidth) + 1 + 'px';
+    //     if(parseInt(div.style.width) < 200) {
+    //         requestAnimationFrame(animationWidth)
+    //     }
+    // }
+    // animationWidth()
+
+    let canvas = document.getElementById('can');
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth
+    let ctx = canvas.getContext('2d');
+
+    let canvasHeight = ctx.canvas.height
+    let canvasWidth = ctx.canvas.width
+
+    let textList = Array(800).join('1').split('')
+    function drawText() {
+        ctx.beginPath()
+        ctx.fillStyle="rgba(0,0,0,0.1)"
+        ctx.fillRect(0,0,canvasWidth,canvasHeight);
+        ctx.fillStyle = '#3afc00'
+        ctx.font = '17px Teko'
+        textList.map((e,index) => {
+            let str = String.fromCharCode(Math.ceil(65 + Math.random() * 57))
+            ctx.fillText(str, index* 10 , e)
+            textList[index] = ( e > canvasHeight + Math.random() * 500 ? 0 : e + 5)
+        })
+        requestAnimationFrame(drawText)
+
+    }
+        drawText()
+
+
+
+    class TextAnime {
+        constructor(ctx,height, width , str) {
+            this.ctx = ctx || document.querySelector('canvas').getContext('2d')
+            this.height = height;
+            this.width = width;
+            this.str = str;
+            this.num = 0;
+        }
+
+        drawText() {
+            console.log(this)
+            this.ctx.clearRect(0,0,this.width,this.height)
+            this.ctx.beginPath()
+            this.ctx.fillStyle = '#3afc00'
+            this.ctx.font = '17px Teko'
+            this.ctx.textAlign = 'center'
+            this.ctx.textBaseline = 'middle'
+            this.num ++;
+            this.ctx.fillText(this.str, this.width / 2 + this.num, this.height / 2)
+
+        }
+
+        startAnime(example) {
+            console.log(example)
+            if (this.num < 100) {
+                requestAnimationFrame(example.drawText)
+            }
+        }
+    }
+
+    // let text = new TextAnime(ctx,canvasHeight,canvasWidth,'Hello World')
+    // text.startAnime(text)
+
+
+
+</script>
+</html>

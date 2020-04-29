@@ -10,3 +10,5 @@
 > 文件AeAnimal
 # Vue粒子特效(Vue3.0)
 > 文件vueParticles
+# Canvas绘制联系
+> 文件canvas

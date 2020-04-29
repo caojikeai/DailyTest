@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        #canvas{
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script src="./library/proton.js"></script>
+<script>
+    const canvas = document.getElementById('canvas')
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+
+    const proton = new Proton()
+
+
+    proton.addEmitter(emitter)
+
+    // 创建render
+    const render = new Proton.CanvasRenderer(canvas)
+
+    proton.addRenderer(render)
+
+    function createEimmiter () {
+        const emitter = new Proton.Emitter()
+        // 定义发射粒子数 和时间
+        // 随机数
+        emitter.rate = new Proton.Rate(new Proton.Span(2,8), 0.01)
+
+        // 加速度
+        emitter.addInitialize(new Proton.Mass(1))
+        // 散射半径
+        emitter.addInitialize(new Proton.Radius(1, 3))
+        // 粒子生命时间
+        emitter.addInitialize(new Proton.Life(2))
+        // 速度
+        emitter.addInitialize(new Proton.Velocity(
+            new Proton.Span(-0.2, 0.2),
+            new Proton.Span(0 , 180),
+            "polar"
+        ))
+
+        emitter.addBehaviour(new Proton.Alpha(1,0))
+        emitter.addBehaviour(new Proton.Scale(0.6,0.4))
+
+        emitter.p.x = canvas.width / 2
+        emitter.p.y = canvas.height / 2
+
+        emitter.emit()
+
+        return emitter
+    }
+
+    let theta = 0
+    let a = 1000
+    function draw() {
+        requestAnimationFrame(draw)
+
+        theta -= 0.1
+        a -= 1
+        emitter.p.x = (a* Math.cos(theta)) / theta + canvas.width/2
+        emitter.p.y = a * Math.sin(theta) / theta + canvas.height / 2
+        proton.update()
+    }
+    draw()
+</script>
+</html>

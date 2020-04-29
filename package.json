@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "vue-particles": "^1.0.9"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

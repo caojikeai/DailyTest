@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+
+<body>
+    <canvas height="600" width="1000" id="can" style="border: 1px solid rgba(35,34,34,0.9);display: block;margin: 50px auto"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById('can');
+    // 工具箱
+    let ctx = canvas.getContext('2d');
+    let canvasHeight = ctx.canvas.height;
+    let canvasWidth = ctx.canvas.width;
+
+    ctx.beginPath();
+    ctx.moveTo(0,canvasHeight/2);
+    ctx.lineTo(canvasWidth,canvasHeight/2)
+    // ctx.stroke()
+    // ctx.beginPath();
+    ctx.moveTo(canvasWidth / 2,0);
+    ctx.lineTo(canvasWidth / 2,canvasHeight)
+    ctx.strokeStyle = '#cccccc'
+    ctx.stroke()
+
+    //文字默认对齐与文本的左下方
+    ctx.beginPath()
+    let str = 'Hello World'
+    ctx.strokeStyle = '#000000'
+    ctx.font = '40px Teko'
+    ctx.textAlign = 'center'
+    // ctx.strokeText('Hello World',canvasWidth / 2 , canvasHeight / 2)
+    // 垂直对齐方式
+    ctx.textBaseline = 'middle'
+    ctx.fillText(str,canvasWidth / 2 , canvasHeight / 2)
+    // 文字下划线
+    ctx.beginPath()
+    let textWidth = ctx.measureText(str).width
+    ctx.moveTo(canvasWidth / 2 - textWidth / 2,canvasHeight / 2 + 20)
+    ctx.lineTo(canvasWidth / 2 + textWidth / 2,canvasHeight / 2 + 20)
+    ctx.stroke()
+</script>
+</html>
