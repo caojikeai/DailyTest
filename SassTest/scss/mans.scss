@@ -1,0 +1,87 @@
+// 模块
+@import "base";
+// 变量
+$primary-color: #000000;
+$base_color: hsl(222,100,50%);
+// 提高明度
+$line_color:lighten($base_color,30%);
+// 减小明度
+$dart_color:darken($base_color,30%);
+$name: 'halo';
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: $primary-color;
+}
+.contain{
+  font-size: 15px;
+  &:hover{
+    opacity: 0;
+  }
+  ul{
+    border: 1px solid $primary-color;
+    & &-text {
+      color: $primary-color;
+    }
+  }
+}
+
+
+.fonts{
+  // 同名简写
+  font:{
+    size: 15px;
+    family: "Avenir", Helvetica, Arial, sans-serif;
+    weight: 500;
+  }
+}
+
+.borders{
+  border: 1px solid black {
+    left: 0;
+    right: 0;
+  }
+}
+
+// mixins
+@mixin alert ($extend,$color) {
+  color: #00a8cc;
+  background-color: $color;
+  // 嵌套
+  a {
+    font-weight: $extend;
+  }
+}
+
+.alert-waring {
+  @include alert(500,#05f57d)
+}
+
+
+.child{
+  @extend .alert-waring;
+  opacity: 0;
+  margin: (10px / 1.5);
+  padding: round(10px / 1.5)
+  floor(10px / 1.5)
+  percentage(650px / 1000px);
+   /*特殊颜色处理*/
+  background-color: hsl(0,100,50%);
+}
+
+
+// 明度变化
+.colors{
+  background-color: $base_color;
+  color: $dart_color;
+  padding: (5px 10px) (5px 15px);
+}
+
+
+.#{$name}-main {
+  align-content: baseline;
+}

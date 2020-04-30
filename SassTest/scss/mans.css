@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.waring {
+  color: red; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #000000; }
+
+.contain {
+  font-size: 15px; }
+  .contain:hover {
+    opacity: 0; }
+  .contain ul {
+    border: 1px solid #000000; }
+    .contain ul .contain ul-text {
+      color: #000000; }
+
+.fonts {
+  font-size: 15px;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-weight: 500; }
+
+.borders {
+  border: 1px solid black;
+    border-left: 0;
+    border-right: 0; }
+
+.alert-waring, .child {
+  color: #00a8cc;
+  background-color: #05f57d; }
+  .alert-waring a, .child a {
+    font-weight: 500; }
+
+.child {
+  opacity: 0;
+  margin: 6.6666666667px;
+  padding: 7px 6px 65%;
+  /*特殊颜色处理*/
+  background-color: red; }
+
+.colors {
+  background-color: #004dff;
+  color: #001f66;
+  padding: 5px 10px 5px 15px; }
+
+.halo-main {
+  align-content: baseline; }
+
+/*# sourceMappingURL=mans.css.map */

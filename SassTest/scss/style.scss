@@ -1,0 +1,73 @@
+$primary-color: #b2ebf2;
+$card-color-1: #ff5722;
+$card-color-2: #dd2c00;
+$side-color: #00bcd4;
+$header-color: #0779e4;
+$main: 'container';
+$gap: 14px;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.#{$main}{
+  min-height: 100vh;
+  background-color: $primary-color;
+}
+
+.#{$main}-grid{
+  display: grid;
+  grid-template-areas: "header header header"
+  "sidebar content content"
+  "footer footer footer";
+  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-columns: 1fr 5fr;
+  column-gap: $gap;
+  row-gap: $gap;
+}
+
+@mixin card-style ($color) {
+  background-color: $color;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 3.5rem;
+}
+
+@mixin card-line-height ($line-height) {
+  line-height: $line-height;
+}
+
+header{
+  grid-area: header;
+  @include card-style($header-color);
+}
+
+aside {
+  grid-area: sidebar;
+  @include card-style($side-color);
+  border-radius: 20px;
+  @include card-line-height(10.6em)
+}
+
+main{
+  grid-area: content;
+  @include card-style($card-color-1);
+  border-radius: 20px;
+  @include card-line-height(10.6em)
+}
+
+footer{
+  grid-area: footer;
+  @include card-style($card-color-2);
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+  .#{$main}-grid{
+    grid-template-columns: 0 1fr;
+    column-gap: 0;
+  }
+}
