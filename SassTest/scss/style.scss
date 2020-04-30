@@ -31,7 +31,7 @@ $gap: 14px;
   background-color: $color;
   text-align: center;
   color: rgba(255, 255, 255, 0.83);
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 @mixin card-line-height ($line-height) {
@@ -54,7 +54,14 @@ main{
   grid-area: content;
   @include card-style($card-color-1);
   border-radius: 20px;
-  @include card-line-height(10.6em)
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  .column{
+    background-color: #0779e4;
+    border-radius: 20px;
+  }
 }
 
 footer{
@@ -62,6 +69,7 @@ footer{
   @include card-style($card-color-2);
 }
 
+/*自适应*/
 @media screen and (max-width: 768px) {
   aside {
     display: none;
@@ -70,4 +78,10 @@ footer{
     grid-template-columns: 0 1fr;
     column-gap: 0;
   }
+  main{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 5px;
+  }
 }
+
