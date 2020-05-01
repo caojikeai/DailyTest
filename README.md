@@ -12,5 +12,5 @@
 > 文件vueParticles
 # Canvas绘制联系
 > 文件canvas
-# Sass练习
+# Sass练习+响应式
 > 文件SassTest
