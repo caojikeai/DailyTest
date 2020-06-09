@@ -7,7 +7,7 @@
 // void
 // symbol
 // bigint
-var tutureSlogan = '图雀社区，汇聚精彩的免费实战教程';
+const tutureSlogan = '图雀社区，汇聚精彩的免费实战教程';
 console.log(tutureSlogan);
 function furry(data) {
     console.log(data);
@@ -16,7 +16,16 @@ furry([{
         path: '/',
         num: 1
     }]);
-var todoListData = [
+// 组合类型
+let strNum;
+let b;
+let c;
+c = 'on';
+// void代表没有返回值
+function noReturn() {
+    console.log('yes');
+}
+const todoListData = [
     {
         content: "图雀社区：汇聚精彩的免费实战教程",
         user: "mRcfps",
@@ -24,7 +33,7 @@ var todoListData = [
         isCompleted: false
     },
 ];
-var intData = {
+const intData = {
     content: '1',
     user: 'arr',
     time: '1',
@@ -39,7 +48,8 @@ var UserId;
     UserId[UserId["pftom"] = 3] = "pftom";
     UserId[UserId["holy"] = 4] = "holy";
 })(UserId || (UserId = {}));
-var data = {
+// @ts-ignore
+const data = {
     user: 0
 };
 console.log('枚举', data);
@@ -49,29 +59,29 @@ function add(x, y, lable) {
     return x + y;
 }
 // 重载
-var suits = ["hearts", "spades", "clubs", "diamonds"];
+let suits = ["hearts", "spades", "clubs", "diamonds"];
 function pickCard(x) {
     // 如果 x 是 `object` 类型，那么我们返回 pickCard 从 myDeck 里面取出 pickCard1 数据
     if (typeof x == "object") {
-        var pickedCard = Math.floor(Math.random() * x.length);
+        let pickedCard = Math.floor(Math.random() * x.length);
         return pickedCard;
     }
     // 如果 x 是 `number` 类型，那么直接返回一个可以取数据的 pickCard2
     else if (typeof x == "number") {
-        var pickedSuit = Math.floor(x / 13);
+        let pickedSuit = Math.floor(x / 13);
         return { suit: suits[pickedSuit], card: x % 13 };
     }
 }
-var myDeck = [
+let myDeck = [
     { suit: "diamonds", card: 2 },
     { suit: "spades", card: 10 },
     { suit: "hearts", card: 4 }
 ];
-var pickedCard1 = myDeck[pickCard(myDeck)];
+let pickedCard1 = myDeck[pickCard(myDeck)];
 console.log("card: " + pickedCard1.card + " of " + pickedCard1.suit);
-var pickedCard2 = pickCard(15);
+let pickedCard2 = pickCard(15);
 console.log("card: " + pickedCard2.card + " of " + pickedCard2.suit);
-var handleArtistsResponse = function (response) {
+const handleArtistsResponse = (response) => {
     if (response.error) {
         console.error(response.error.message);
         return;

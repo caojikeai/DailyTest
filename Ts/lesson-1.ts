@@ -17,6 +17,20 @@ furry([{
     num: 1
 }])
 
+// 组合类型
+let strNum : number | string;
+
+type NumStr = number | string;
+let b:NumStr;
+
+let c : 'on' | 'off';
+c = 'on'
+
+// void代表没有返回值
+function noReturn():void {
+    console.log('yes')
+}
+
 // 注解 接口
 interface Todo {
     // 只读
@@ -59,6 +73,7 @@ interface  Tode {
     user: UserId
 }
 
+// @ts-ignore
 const data:Tode = {
     user: 0
 }

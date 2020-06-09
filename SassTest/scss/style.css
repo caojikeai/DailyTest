@@ -4,7 +4,6 @@
   padding: 0; }
 
 .container {
-  min-height: 100vh;
   background-color: #b2ebf2; }
 
 .container-grid {
@@ -16,6 +15,7 @@
   row-gap: 14px; }
 
 header {
+  max-height: 120px;
   grid-area: header;
   background-color: #0779e4;
   text-align: center;
@@ -24,12 +24,15 @@ header {
 
 aside {
   grid-area: sidebar;
+  border-radius: 20px;
+  line-height: 10.6em;
   background-color: #00bcd4;
   text-align: center;
   color: rgba(255, 255, 255, 0.83);
-  font-size: 3rem;
-  border-radius: 20px;
-  line-height: 10.6em; }
+  font-size: 3rem; }
+  aside:hover {
+    box-shadow: 5px 5px 5px rgba(94, 94, 94, 0.73);
+    transition: all .25s ease-in; }
 
 main {
   grid-area: content;
@@ -37,14 +40,21 @@ main {
   text-align: center;
   color: rgba(255, 255, 255, 0.83);
   font-size: 3rem;
+  line-height: 150px;
   border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 20px; }
+  padding: 20px;
+  gap: 25px; }
   main .column {
     background-color: #0779e4;
-    border-radius: 20px; }
+    border-radius: 20px;
+    min-height: 150px; }
+    main .column:hover {
+      box-shadow: 5px 5px 5px rgba(94, 94, 94, 0.73);
+      transition: all .25s ease-in;
+      transform: scale(1.1); }
 
 footer {
   grid-area: footer;
@@ -62,9 +72,48 @@ footer {
     grid-template-columns: 0 1fr;
     column-gap: 0; }
 
+  header {
+    max-height: 110px; }
+
   main {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    gap: 5px; } }
+    gap: 15px; } }
+.ls {
+  height: auto; }
+  .ls p {
+    color: red; }
+
+.mainContainer {
+  height: 100vh;
+  width: 150vh;
+  margin: 0 auto;
+  box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  border-radius: 12px; }
+  .mainContainer-1 {
+    background-color: #ecf0f3;
+    box-shadow: inset 4px -1px 4px white, inset -1px 0px 4px #d1d9e6; }
+    .mainContainer-1 .viewport {
+      color: red; }
+  .mainContainer-2 {
+    background-color: #ecf0f3;
+    box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9; }
+  .mainContainer button {
+    width: 13em;
+    height: 4em;
+    background-color: #4B70E2;
+    color: #f9f9f9;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    border-radius: 10em;
+    outline: none;
+    border: 0; }
+    .mainContainer button:hover {
+      color: red; }
+
+.\.error-icon {
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */
